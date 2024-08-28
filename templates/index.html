@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Scenario CSV Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f5f5;
+    --text-color: #333;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/static/App Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+main {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: margin-right 0.3s ease-in-out;
+}
+
+main.sidebar-open {
+    margin-right: 10px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+textarea, input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
+button i {
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: #3a7bc8;
+}
+
+button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button.loading i {
+    animation: spin 1s linear infinite;
+}
+
+button.resetBtn {
+    background-color: #ff4d4d;
+}
+
+button.resetBtn:hover {
+    background-color: #ff3333;
+}
+
+button#toggleSidebar {
+    margin-bottom: 20px;
+}
+
+button#toggleSidebar.active {
+    background-color: #ff4d4d; /* This is a red color, you can adjust as needed */
+}
+
+button#toggleSidebar {
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease; /* This will make the color change smooth */
+}
+    
+.preview-container, #preview {
+    margin-top: 10px;
+    width: 100%;
+    overflow-x: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+#preview {
+    padding: 20px;
+    min-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tooltip {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-image: url('/static/App Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: right 0.3s ease-in-out, width 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    right: 0;
+    width: 300px;
+}
+
+.sidebar-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.open .sidebar-content {
+    opacity: 1;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar.open .sidebar-toggle {
+    left: 270px;
+}
+
+#industry-list, #scenario-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#industry-list li, #scenario-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#industry-list li:hover, #scenario-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.selected {
+    background-color: #e0e0e0;
+}
+
+.scenario-section, .input-group {
+    margin-bottom: 20px;
+}
+
+.scenario-section textarea, .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    flex: 1;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+<main>
+    <h1>Data Scenario CSV Generator</h1>
+    
+    <form id="scenarioForm" method="POST">
+        <div class="scenario-section">
+            <label for="scenario">Describe your scenario for data creation:</label>
+            <textarea id="scenario" name="scenario" rows="5" required></textarea>
+        </div>
+
+        <button type="button" id="toggleSidebar" class="toggle-btn">Show Scenarios</button>
+        
+        <div class="input-group">
+            <label for="num_rows">Number of rows to generate (max 10K):</label>
+            <input type="number" id="num_rows" name="num_rows" min="1" max="10000" value="100" required>
+            <span class="tooltip" id="rowsTooltip">ℹ️
+                <span class="tooltiptext">Higher row counts may increase generation time.</span>
+            </span>
+        </div>
+
+        <div class="input-group">
+            <label for="num_columns">Number of columns to generate (max 20):</label>
+            <input type="number" id="num_columns" name="num_columns" min="1" max="20" value="5" required>
+            <span class="tooltip" id="columnsTooltip">ℹ️
+                <span class="tooltiptext">More columns may increase generation time and complexity.</span>
+            </span>
+        </div>
+        
+        <div class="button-group">
+            <button type="button" id="previewBtn"><i class="fas fa-eye"></i> Preview Data</button>
+            <button type="button" id="generateBtn"><i class="fas fa-file-csv"></i> Generate and Download CSV</button>
+            <button type="button" id="resetBtn" class="resetBtn"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+    </form>
+
+        <div id="scenarioBrowser" class="sidebar">
+            <button class="sidebar-toggle" onclick="toggleSidebar()">&lt;&lt;</button>
+            <div class="sidebar-content">
+                <input type="text" id="searchInput" placeholder="Search industries..." style="width: 100%; padding: 5px;">
+                <h3>Industries</h3>
+                <ul id="industry-list"></ul>
+                <h3>Scenarios</h3>
+                <ul id="scenario-list"></ul>
+            </div>
+        </div>
+    
+    <div class="preview-container">
+        <div id="preview"></div>
+    </div>
+    </main>
+
+<script>
+
+
+
+
+    
+// Start of Javascript code
+    $(document).ready(function() {
+        console.log("JavaScript is loaded and running");
+
+        function showLoading() {
+            $('#loading-overlay').show();
+        }
+        function hideLoading() {
+            $('#loading-overlay').hide();
+        }
+
+        function setButtonLoading(button, isLoading) {
+            if (isLoading) {
+                button.addClass('loading');
+                button.prop('disabled', true);
+                button.find('i').removeClass().addClass('fas fa-spinner');
+            } else {
+                button.removeClass('loading');
+                button.prop('disabled', false);
+                // Restore original icon
+                if (button.attr('id') === 'previewBtn') {
+                    button.find('i').removeClass().addClass('fas fa-eye');
+                } else if (button.attr('id') === 'generateBtn') {
+                    button.find('i').removeClass().addClass('fas fa-file-csv');
+                }
+            }
+        }
+
+        $('#previewBtn').on('click', function() {
+            console.log("Preview button clicked");
+            var button = $(this);
+            setButtonLoading(button, true);
+            showLoading();
+            $.ajax({
+                url: '/',
+                method: 'POST',
+                data: $('#scenarioForm').serialize() + '&preview=true&num_columns=' + $('#num_columns').val(),
+                success: function(response) {
+                    if (response.success) {
+                        displayPreview(response.preview);
+                    } else {
+                        alert('Error: ' + response.error);
+                    }
+                },
+                error: function() {
+                    alert('An error occurred while processing your preview request.');
+                },
+                complete: function() {
+                    setButtonLoading(button, false);
+                    hideLoading();
+                }
+            });
+        });
+
+        $('#generateBtn').on('click', function() {
+            console.log("Generate CSV button clicked");
+            var button = $(this);
+            setButtonLoading(button, true);
+            showLoading();
+            var form = $('#scenarioForm')[0];
+            var data = new FormData(form);
+            data.append('num_columns', $('#num_columns').val());
+            
+            $.ajax({
+                type: "POST",
+                url: "/",
+                data: data,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    responseType: 'blob'
+                },
+                success: function (blob) {
+                    var link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = 'business_scenario.csv';
+                    link.click();
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error: ", xhr, status, error);
+                    alert("An error occurred while generating the CSV.");
+                },
+                complete: function() {
+                    setButtonLoading(button, false);
+                    hideLoading();
+                }
+            });
+        });
+
+        $('#resetBtn').on('click', function() {
+            $('#scenario').val('');
+            $('#num_rows').val('');
+            $('#preview').html('');
+            alert('Form has been reset.');
+        });
+        
+        $('#num_rows').on('input', function() {
+            var rowCount = $(this).val();
+            var tooltipText = "Higher row counts may increase generation time.";
+
+            if (rowCount > 1000) {
+                tooltipText += " Generating " + rowCount + " rows may take a while.";
+            } else if (rowCount > 5000) {
+                tooltipText += " Generating " + rowCount + " rows may take a significant amount of time.";
+            }
+
+            $('#rowsTooltip .tooltiptext').text(tooltipText);
+        });
+
+        $('#num_columns').on('input', function() {
+            var columnCount = $(this).val();
+            var tooltipText = "More columns may increase generation time and complexity.";
+
+            if (columnCount > 10) {
+                tooltipText += " Generating " + columnCount + " columns may result in a very wide dataset.";
+            }
+
+            $('#columnsTooltip .tooltiptext').text(tooltipText);
+        });
+
+        function displayPreview(data) {
+            var preview = '<h2>Preview (first 5 rows)</h2><table><tr>';
+            // Add table headers
+            for (var key in data[0]) {
+                preview += '<th>' + key + '</th>';
+            }
+            preview += '</tr>';
+            // Add table rows
+            data.forEach(function(row) {
+                preview += '<tr>';
+                for (var key in row) {
+                    preview += '<td>' + row[key] + '</td>';
+                }
+                preview += '</tr>';
+            });
+            preview += '</table>';
+            $('#preview').html(preview);
+        }
+        });
+
+
+    
+// Data
+const industries = ["Sales and Marketing", "Finance and Accounting", "Human Resources", "Healthcare", "Education"];
+const scenarios = {
+    "Finance and Accounting": [
+        "Company Financial Statements: Quarterly financial data, including income statements, balance sheets, and cash flow statements.",
+        "Investment Portfolio: Data on a diversified investment portfolio, including stock prices, bond yields, and asset allocation."
+    ],
+    // ... other industries and their scenarios
+};
+
+// DOM Elements
+const sidebar = document.getElementById('scenarioBrowser');
+const toggleBtn = document.getElementById('toggleSidebar');
+const industryList = document.getElementById('industry-list');
+const scenarioList = document.getElementById('scenario-list');
+const searchInput = document.getElementById('searchInput');
+const mainContent = document.querySelector('main');
+const body = document.body;
+const scenarioTextarea = document.getElementById('scenario');
+
+    
+function toggleSidebar() {
+    console.log("Toggle sidebar function called");
+    const sidebar = document.getElementById('scenarioBrowser');
+    const toggleBtn = document.getElementById('toggleSidebar');
+    console.log("Sidebar element:", sidebar);
+    sidebar.classList.toggle('open');
+    const isOpen = sidebar.classList.contains('open');
+    console.log("Sidebar is open:", isOpen);
+    
+    // Change button text and style based on sidebar state
+    if (isOpen) {
+        toggleBtn.textContent = 'Hide Scenarios';
+        toggleBtn.classList.add('active');
+    } else {
+        toggleBtn.textContent = 'Show Scenarios';
+        toggleBtn.classList.remove('active');
+    }
+    
+    document.body.classList.toggle('sidebar-open', isOpen);
+}
+
+
+// Industry and Scenario Display Functions
+function displayIndustries(industries) {
+    industryList.innerHTML = industries.map(industry => 
+        `<li onclick="selectIndustry('${industry}')">${industry}</li>`
+    ).join('');
+}
+
+function selectIndustry(industry) {
+    industryList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+    event.target.classList.add('selected');
+    displayScenarios(scenarios[industry] || []);
+}
+
+function displayScenarios(industryScenarios) {
+    scenarioList.innerHTML = industryScenarios.map(scenario => 
+        `<li onclick="selectScenario('${scenario.replace(/'/g, "\\'")}')">${scenario}</li>`
+    ).join('');
+}
+
+function selectScenario(scenario) {
+    document.getElementById('scenario').value = scenario;
+    toggleSidebar(); // This will close the sidebar
+}
+
+// Search Function
+function searchIndustries(searchTerm) {
+    const filteredIndustries = industries.filter(industry => 
+        industry.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    displayIndustries(filteredIndustries);
+}
+
+// Event Listeners
+document.getElementById('toggleSidebar').addEventListener('click', toggleSidebar);
+document.querySelector('.sidebar-toggle').addEventListener('click', toggleSidebar);
+document.getElementById('searchInput').addEventListener('input', (e) => searchIndustries(e.target.value));
+// Initial Display
+displayIndustries(industries);
+
+</script>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+</body>
+</html>
