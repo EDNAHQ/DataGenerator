@@ -1,0 +1,427 @@
+{
+  "industries": [
+    "Sales and Marketing",
+    "Finance and Accounting",
+    "Human Resources",
+    "Healthcare",
+    "Education",
+    "Transportation and Logistics",
+    "Environmental Science",
+    "E-commerce",
+    "Real Estate",
+    "Social Media",
+    "Retail",
+    "Technology",
+    "Sports and Fitness",
+    "Food and Beverage",
+    "Energy",
+    "Tourism and Hospitality",
+    "Public Policy and Government",
+    "Manufacturing",
+    "Agriculture",
+    "Entertainment",
+    "Insurance",
+    "Telecommunications",
+    "Legal",
+    "Retail Banking",
+    "Media and Publishing",
+    "Transportation Infrastructure",
+    "Security",
+    "Pharmaceutical",
+    "Retail E-commerce",
+    "Automotive",
+    "Agriculture Technology (AgTech)",
+    "Consumer Electronics",
+    "Energy Utilities",
+    "Telecommunications Infrastructure",
+    "Aerospace",
+    "Environmental Monitoring",
+    "Non-Profit and Charity",
+    "Food Supply Chain",
+    "Urban Planning",
+    "Academic Research",
+    "Hospitality Management",
+    "Music and Entertainment",
+    "Fashion and Apparel",
+    "Gaming Industry",
+    "Supply Chain Analytics",
+    "Consumer Behavior",
+    "Real-Time Data Analytics",
+    "Media Production",
+    "Data Science Projects",
+    "Cryptocurrency and Blockchain",
+    "Disaster Management",
+    "Food and Beverage Production",
+    "Professional Services",
+    "Crowdfunding and Fundraising",
+    "Construction and Engineering",
+    "Art and Culture",
+    "Health and Wellness",
+    "Tourism",
+    "Logistics and Transportation",
+    "Social Impact and Community Development"
+  ],
+  "scenarios": {
+    "Sales and Marketing": [
+      "Retail Sales Data: Sales data from a chain of stores, including product categories, sales volume, revenue, and customer demographics.",
+      "Online Marketing Campaign: Data on clicks, impressions, conversions, and ad spend across multiple platforms (Google, Facebook, etc.).",
+      "Customer Segmentation: Data from a customer loyalty program, including purchase history, demographics, and customer feedback.",
+      "Product Launch Analysis: Sales and marketing data from a new product launch, tracking pre-launch surveys, launch day sales, and post-launch trends."
+    ],
+    "Finance and Accounting": [
+      "Company Financial Statements: Quarterly financial data, including income statements, balance sheets, and cash flow statements.",
+      "Investment Portfolio: Data on a diversified investment portfolio, including stock prices, bond yields, and asset allocation.",
+      "Expense Management: Corporate expense data, broken down by department, project, and cost type.",
+      "Loan Performance: Data on loans issued by a bank, including interest rates, repayment history, and default rates."
+    ],
+    "Human Resources": [
+      "Employee Performance: Data on employee performance reviews, including ratings, feedback, and career progression.",
+      "Recruitment Metrics: Data on job applications, interviews, and hires, including time-to-fill and cost-per-hire metrics.",
+      "Employee Satisfaction: Survey data on employee satisfaction, including responses to questions about work-life balance, benefits, and company culture.",
+      "Diversity and Inclusion: Data on workforce demographics, including gender, ethnicity, age, and job levels."
+    ],
+    "Healthcare": [
+      "Patient Records: Anonymized patient data, including diagnoses, treatments, and outcomes.",
+      "Hospital Operations: Data on hospital bed occupancy, staff scheduling, and patient wait times.",
+      "Clinical Trials: Data from a clinical trial, including participant demographics, treatment groups, and health outcomes.",
+      "Public Health Surveillance: Data on disease incidence, vaccination rates, and public health interventions."
+    ],
+    "Education": [
+      "Student Performance: Data on student grades, attendance, and extracurricular activities.",
+      "Online Course Engagement: Data on student engagement in an online course, including video views, quiz scores, and forum participation.",
+      "Curriculum Effectiveness: Data comparing student outcomes before and after curriculum changes.",
+      "School Budgeting: Data on school expenditures, broken down by category (staff salaries, facilities, technology, etc.)."
+    ],
+    "Transportation and Logistics": [
+      "Fleet Management: Data on a logistics company's fleet, including vehicle maintenance, fuel consumption, and route efficiency.",
+      "Public Transit Usage: Data on bus and train ridership, including peak times, routes, and fare collection.",
+      "Supply Chain Management: Data on inventory levels, supplier performance, and order fulfillment times.",
+      "Traffic Patterns: Data on traffic flow, accident rates, and road construction impacts in a city."
+    ],
+    "Environmental Science": [
+      "Air Quality Monitoring: Data on air pollutant levels across different regions and times.",
+      "Climate Change Impact: Data on temperature changes, precipitation patterns, and extreme weather events over time.",
+      "Wildlife Tracking: Data on animal movements, population changes, and habitat usage.",
+      "Renewable Energy Production: Data on solar, wind, and hydroelectric energy production, including capacity, output, and grid integration."
+    ],
+    "E-commerce": [
+      "Website Traffic: Data on website visitors, including page views, bounce rates, and session durations.",
+      "Product Reviews: Data on customer reviews, including ratings, feedback comments, and sentiment analysis.",
+      "Shopping Cart Analysis: Data on items added to and removed from shopping carts, purchase completion rates, and abandoned carts.",
+      "Pricing Strategies: Data on the impact of pricing changes on sales volumes, revenue, and customer behavior."
+    ],
+    "Real Estate": [
+      "Property Listings: Data on real estate listings, including property features, asking prices, and sales outcomes.",
+      "Rental Market Analysis: Data on rental properties, including occupancy rates, rental prices, and lease terms.",
+      "Urban Development: Data on construction permits, land use changes, and infrastructure investments in a city.",
+      "Homebuyer Demographics: Data on homebuyer characteristics, including age, income, and financing methods."
+    ],
+    "Social Media": [
+      "Influencer Analysis: Data on social media influencers, including follower counts, engagement rates, and content types.",
+      "Content Performance: Data on the performance of social media posts, including likes, shares, comments, and reach.",
+      "Sentiment Analysis: Data on public sentiment towards a brand or topic, derived from social media mentions and comments.",
+      "Social Network Mapping: Data on connections between users, groups, and organizations on a social media platform."
+    ],
+    "Retail": [
+      "Inventory Management: Data on product inventory levels, reorder points, and stock turnover rates.",
+      "Customer Journey Mapping: Data tracking customer interactions across different touchpoints (online, in-store, customer service).",
+      "Sales Promotion Effectiveness: Data on the impact of sales promotions on customer purchases, traffic, and repeat business.",
+      "Seasonal Sales Trends: Data on sales performance during holiday seasons, back-to-school periods, and other key times."
+    ],
+    "Technology": [
+      "Software Development: Data on software project timelines, code commits, bug reports, and feature requests.",
+      "IT Infrastructure: Data on server uptime, network performance, and incident response times.",
+      "Cybersecurity: Data on security incidents, vulnerabilities, and compliance audits.",
+      "User Behavior Analysis: Data on how users interact with a software application, including click paths, feature usage, and drop-off points."
+    ],
+    "Sports and Fitness": [
+      "Athlete Performance: Data on athlete performance metrics, including speed, strength, and endurance.",
+      "Team Strategy Analysis: Data on team performance, play strategies, and game outcomes.",
+      "Fitness Tracker Data: Data from wearable fitness devices, including steps taken, calories burned, and sleep patterns.",
+      "Event Management: Data on ticket sales, attendance, and revenue for sports events."
+    ],
+    "Food and Beverage": [
+      "Restaurant Operations: Data on customer orders, table turnover rates, and menu performance.",
+      "Food Safety Monitoring: Data on food safety inspections, violations, and corrective actions.",
+      "Supply Chain Traceability: Data on the sourcing, transportation, and quality control of food products.",
+      "Consumer Preferences: Data on food and beverage trends, customer preferences, and market segmentation."
+    ],
+    "Energy": [
+      "Power Grid Management: Data on electricity production, consumption, and distribution across a power grid.",
+      "Energy Efficiency Programs: Data on the impact of energy efficiency initiatives on consumption and cost savings.",
+      "Renewable Energy Adoption: Data on the growth of renewable energy installations and their impact on overall energy mix.",
+      "Oil and Gas Exploration: Data on drilling activities, production volumes, and environmental impact."
+    ],
+    "Tourism and Hospitality": [
+      "Hotel Occupancy: Data on hotel bookings, occupancy rates, and room pricing.",
+      "Tourist Demographics: Data on tourist arrivals, spending patterns, and preferences.",
+      "Travel Patterns: Data on flight bookings, travel routes, and seasonal travel trends.",
+      "Event Attendance: Data on attendance at tourism events, including conferences, festivals, and exhibitions."
+    ],
+    "Public Policy and Government": [
+      "Election Results: Data on voter turnout, election results, and demographic voting patterns.",
+      "Public Spending: Data on government budgets, expenditures, and financial audits.",
+      "Policy Impact Analysis: Data on the outcomes of public policies, including economic, social, and environmental effects.",
+      "Census Data: Data on population demographics, including age, education, and income levels."
+    ],
+    "Manufacturing": [
+      "Production Line Efficiency: Data on production times, machine utilization, and output quality.",
+      "Supply Chain Disruptions: Data on the impact of supply chain disruptions on production schedules and costs.",
+      "Quality Control: Data on defect rates, inspection results, and process improvements.",
+      "Inventory Management: Data on raw materials, work-in-progress, and finished goods inventory."
+    ],
+    "Agriculture": [
+      "Crop Yield Analysis: Data on crop yields, soil conditions, and weather patterns.",
+      "Farm Management: Data on farm inputs (seeds, fertilizers, etc.), labor usage, and financial performance.",
+      "Livestock Tracking: Data on livestock health, breeding, and productivity.",
+      "Sustainable Agriculture: Data on the adoption of sustainable farming practices and their impact on yield and profitability."
+    ],
+    "Entertainment": [
+      "Box Office Performance: Data on movie ticket sales, audience demographics, and revenue trends.",
+      "Streaming Platform Data: Data on user engagement, content preferences, and subscription rates on streaming platforms.",
+      "Music Chart Analysis: Data on song popularity, streaming counts, and artist performance.",
+      "Event Attendance: Data on attendance at concerts, festivals, and other entertainment events."
+    ],
+    "Insurance": [
+      "Claim Analysis: Data on insurance claims, including type, amount, and settlement times.",
+      "Risk Assessment: Data on risk factors for different insurance products (life, health, auto, etc.).",
+      "Fraud Detection: Data on suspicious claims, anomaly detection, and fraud investigation outcomes.",
+      "Customer Retention: Data on policy renewals, customer satisfaction, and churn rates."
+    ],
+    "Telecommunications": [
+      "Call Data Records: Data on call durations, frequencies, and locations for mobile network analysis.",
+      "Network Performance: Data on network uptime, latency, and data throughput.",
+      "Customer Support Metrics: Data on call center performance, including response times, resolution rates, and customer satisfaction.",
+      "Service Subscription Trends: Data on subscription plans, upgrades, downgrades, and cancellations."
+    ],
+    "Legal": [
+      "Case Management: Data on legal cases, including case types, durations, outcomes, and costs.",
+      "Contract Analysis: Data on contract terms, compliance, and breach incidents.",
+      "Litigation Risk Assessment: Data on litigation risks, historical case outcomes, and legal costs.",
+      "Intellectual Property Management: Data on patents, trademarks, and copyright filings."
+    ],
+    "Retail Banking": [
+      "Customer Transaction History: Data on customer transactions, account balances, and payment methods.",
+      "Credit Scoring: Data on credit scores, loan applications, and approval rates.",
+      "Branch Performance: Data on branch operations, including customer footfall, service times, and revenue.",
+      "Mobile Banking Usage: Data on mobile app usage, transaction volumes, and customer satisfaction."
+    ],
+    "Media and Publishing": [
+      "Content Consumption: Data on reader/viewer engagement with different types of content (articles, videos, podcasts).",
+      "Subscription Models: Data on subscription rates, renewals, and cancellations across different content types.",
+      "Ad Revenue Performance: Data on ad placements, clicks, and revenue generated from digital advertising.",
+      "Audience Demographics: Data on audience demographics, including age, gender, location, and interests."
+    ],
+    "Transportation Infrastructure": [
+      "Road Maintenance: Data on road conditions, maintenance schedules, and repair costs.",
+      "Public Transportation Usage: Data on bus and train ridership, routes, and service reliability.",
+      "Traffic Incident Analysis: Data on traffic accidents, causes, and response times.",
+      "Urban Planning: Data on city planning initiatives, infrastructure projects, and population density."
+    ],
+    "Security": [
+      "Cybersecurity Threats: Data on network vulnerabilities, attack vectors, and breach incidents.",
+      "Physical Security Incidents: Data on security breaches, incident reports, and resolution outcomes in physical locations.",
+      "Access Control: Data on access logs, employee entry/exit times, and unauthorized access attempts.",
+      "Surveillance System Performance: Data on surveillance camera uptime, coverage, and incident detection."
+    ],
+    "Pharmaceutical": [
+      "Drug Development: Data on clinical trials, drug efficacy, and side effects.",
+      "Supply Chain Management: Data on pharmaceutical supply chains, including raw material sourcing, manufacturing, and distribution.",
+      "Prescription Data: Data on drug prescriptions, patient demographics, and adherence rates.",
+      "Regulatory Compliance: Data on compliance with FDA regulations, inspection results, and corrective actions."
+    ],
+    "Retail E-commerce": [
+      "Customer Lifetime Value: Data on customer purchase history, repeat purchases, and lifetime value predictions.",
+      "Personalized Recommendations: Data on product recommendations, customer preferences, and purchase outcomes.",
+      "Return Analysis: Data on product returns, reasons for returns, and refund processing times.",
+      "Supply Chain Optimization: Data on inventory management, supplier performance, and order fulfillment."
+    ],
+    "Automotive": [
+      "Vehicle Sales Data: Data on vehicle sales, customer demographics, and financing options.",
+      "Maintenance Records: Data on vehicle maintenance schedules, service history, and repair costs.",
+      "Telematics Data: Data on vehicle usage, driving behavior, and fuel efficiency.",
+      "Warranty Claims: Data on vehicle warranty claims, parts replaced, and cost of claims."
+    ],
+    "Agriculture Technology (AgTech)": [
+      "Precision Farming: Data on GPS-guided farming equipment, crop yield mapping, and variable rate technology.",
+      "Soil Health Monitoring: Data on soil composition, moisture levels, and nutrient management.",
+      "Weather Impact on Crops: Data on weather patterns, crop growth stages, and yield outcomes.",
+      "Pest and Disease Management: Data on pest infestations, treatment applications, and crop losses."
+    ],
+    "Consumer Electronics": [
+      "Product Feedback: Data on customer reviews, product ratings, and feedback on consumer electronics.",
+      "Warranty and Support Data: Data on product warranty claims, customer support interactions, and resolution times.",
+      "Product Development: Data on product design, prototyping, and testing phases.",
+      "Market Trends: Data on consumer electronics market trends, sales forecasts, and competitor analysis."
+    ],
+    "Energy Utilities": [
+      "Smart Meter Data: Data on electricity consumption, peak usage times, and energy pricing.",
+      "Grid Stability: Data on power grid performance, outages, and load balancing.",
+      "Renewable Integration: Data on integrating renewable energy sources into the power grid, including solar and wind generation.",
+      "Customer Billing Data: Data on energy billing, payment history, and customer satisfaction."
+    ],
+    "Telecommunications Infrastructure": [
+      "Tower Location Analysis: Data on cell tower locations, coverage areas, and signal strength.",
+      "5G Network Rollout: Data on 5G deployment, coverage, and user adoption.",
+      "Bandwidth Utilization: Data on network bandwidth usage, peak times, and traffic management.",
+      "Subscriber Churn Analysis: Data on customer churn, reasons for leaving, and retention strategies."
+    ],
+          "Aerospace": [
+            "Flight Performance: Data on aircraft performance, fuel efficiency, and flight times.",
+            "Maintenance Logs: Data on aircraft maintenance, inspections, and repair history.",
+            "Satellite Data: Data on satellite orbits, communication performance, and lifespan.",
+            "Air Traffic Management: Data on air traffic control, flight paths, and congestion."
+          ],
+          "Environmental Monitoring": [
+            "Water Quality Monitoring: Data on water pollution levels, sources of contamination, and remediation efforts.",
+            "Deforestation Tracking: Data on forest coverage, deforestation rates, and conservation efforts.",
+            "Biodiversity Studies: Data on species population counts, habitat changes, and conservation status.",
+            "Carbon Emissions: Data on CO2 emissions, sources, and reduction initiatives."
+          ],
+          "Non-Profit and Charity": [
+            "Fundraising Data: Data on donation amounts, donor demographics, and campaign effectiveness.",
+            "Program Impact Analysis: Data on the outcomes of non-profit programs, including beneficiaries served and impact achieved.",
+            "Volunteer Management: Data on volunteer participation, hours contributed, and retention rates.",
+            "Grant Management: Data on grant applications, awards, and compliance reporting."
+          ],
+          "Food Supply Chain": [
+            "Food Traceability: Data on the tracking of food products from farm to table, including safety and quality checks.",
+            "Cold Chain Logistics: Data on the temperature-controlled supply chain, including storage and transportation.",
+            "Inventory Management in Food Retail: Data on stock levels, spoilage rates, and supply chain disruptions.",
+            "Consumer Food Preferences: Data on trends in consumer preferences for organic, local, and sustainable food products."
+          ],
+          "Urban Planning": [
+            "Zoning Data: Data on land use zoning, development regulations, and property values.",
+            "Public Transit Expansion: Data on the planning and impact of expanding public transit systems.",
+            "Green Space Development: Data on park creation, maintenance, and usage by the public.",
+            "Smart City Initiatives: Data on IoT implementation, smart traffic management, and urban data analytics."
+          ],
+          "Academic Research": [
+            "Citation Analysis: Data on academic paper citations, author impact, and journal rankings.",
+            "Research Funding: Data on research grant applications, awards, and funding amounts.",
+            "Collaboration Networks: Data on collaborations between researchers, institutions, and across disciplines.",
+            "Publication Metrics: Data on publication counts, open access availability, and peer review outcomes."
+          ],
+          "Hospitality Management": [
+            "Guest Satisfaction: Data on guest feedback, review ratings, and service improvement initiatives.",
+            "Occupancy Rates: Data on room occupancy trends, booking patterns, and peak seasons.",
+            "Revenue Management: Data on pricing strategies, revenue per available room (RevPAR), and forecasting.",
+            "Event Planning: Data on event bookings, attendance, and revenue from conferences, weddings, and other events."
+          ],
+          "Music and Entertainment": [
+            "Streaming Analytics: Data on music streaming habits, popular genres, and artist performance on platforms like Spotify and Apple Music.",
+            "Concert Attendance: Data on ticket sales, venue capacity, and artist performance metrics.",
+            "Music Sales Trends: Data on physical and digital music sales, including vinyl, CDs, and digital downloads.",
+            "Royalty Distribution: Data on royalty payments to artists, producers, and songwriters based on streams and sales."
+          ],
+          "Fashion and Apparel": [
+            "Trend Analysis: Data on emerging fashion trends, color palettes, and consumer preferences.",
+            "Supply Chain Management: Data on garment production, inventory levels, and supply chain disruptions.",
+            "Sales Performance: Data on sales by product category, seasonality, and discounting strategies.",
+            "E-commerce Fashion: Data on online fashion sales, return rates, and customer reviews."
+          ],
+          "Gaming Industry": [
+            "Player Engagement: Data on player activity, session durations, and in-game purchases.",
+            "Game Development: Data on bug reports, feature requests, and development timelines.",
+            "Monetization Strategies: Data on revenue from in-app purchases, ads, and subscriptions.",
+            "Esports Analytics: Data on esports tournament performance, viewership, and prize distributions."
+          ],
+          "Supply Chain Analytics": [
+            "Demand Forecasting: Data on sales forecasts, lead times, and inventory management.",
+            "Supplier Performance: Data on supplier reliability, lead times, and cost efficiency.",
+            "Logistics Optimization: Data on transportation routes, delivery times, and cost reductions.",
+            "Inventory Turnover: Data on inventory levels, turnover rates, and stockouts."
+          ],
+          "Consumer Behavior": [
+            "Shopping Patterns: Data on purchase frequencies, basket sizes, and brand loyalty.",
+            "Behavioral Segmentation: Data on consumer segments based on shopping habits, demographics, and psychographics.",
+            "Customer Journey Mapping: Data on the touchpoints and paths consumers take from awareness to purchase.",
+            "Feedback and Reviews: Data on customer feedback, review sentiment, and impact on sales."
+          ],
+          "Real-Time Data Analytics": [
+            "IoT Sensor Data: Data from IoT devices monitoring temperature, humidity, or machinery health in real-time.",
+            "Streaming Analytics: Data on real-time transactions, user interactions, or social media streams.",
+            "Financial Market Data: Real-time data on stock prices, trading volumes, and market indices.",
+            "Smart City Data: Real-time data on traffic flow, public transportation usage, and environmental conditions."
+          ],
+          "Media Production": [
+            "Content Creation: Data on video production timelines, content types, and resource allocation.",
+            "Audience Analytics: Data on viewership, engagement, and audience demographics for TV shows, movies, or online content.",
+            "Post-Production Management: Data on editing schedules, revision cycles, and delivery deadlines.",
+            "Digital Distribution: Data on streaming, downloads, and digital sales across platforms."
+          ],
+          "Data Science Projects": [
+            "Kaggle Competitions: Data from Kaggle datasets, including competition challenges, team performance, and model accuracy.",
+            "Cross-Industry Projects: Data from collaborative data science projects involving multiple industries or disciplines.",
+            "Open Source Contributions: Data on contributions to open-source data science tools, libraries, and frameworks.",
+            "Project Management: Data on project timelines, team roles, and milestone completion."
+          ],
+          "Cryptocurrency and Blockchain": [
+            "Cryptocurrency Prices: Data on historical and real-time cryptocurrency prices, trading volumes, and market cap.",
+            "Blockchain Transactions: Data on blockchain transactions, gas fees, and wallet addresses.",
+            "ICO Analysis: Data on initial coin offerings (ICOs), token distributions, and fundraising amounts.",
+            "Mining Operations: Data on cryptocurrency mining, hash rates, and energy consumption."
+          ],
+          "Disaster Management": [
+            "Emergency Response: Data on response times, resource allocation, and outcomes in disaster situations.",
+            "Disaster Preparedness: Data on risk assessments, preparedness drills, and community readiness.",
+            "Recovery and Reconstruction: Data on post-disaster recovery, reconstruction costs, and timelines.",
+            "Impact Analysis: Data on the economic, social, and environmental impact of disasters."
+          ],
+          "Food and Beverage Production": [
+            "Supply Chain Traceability: Data on the traceability of food ingredients from farm to fork.",
+            "Production Efficiency: Data on production line efficiency, waste reduction, and energy usage.",
+            "Product Development: Data on the development and testing of new food products, including taste tests and shelf life.",
+            "Nutritional Analysis: Data on the nutritional content of food products, including macronutrients, vitamins, and minerals."
+          ],
+          "Professional Services": [
+            "Client Management: Data on client interactions, project billing, and satisfaction scores.",
+            "Service Delivery Metrics: Data on service delivery timelines, quality, and client feedback.",
+            "Consulting Engagements: Data on consulting project scopes, budgets, and outcomes.",
+            "Business Development: Data on lead generation, conversion rates, and client acquisition costs."
+          ],
+          "Crowdfunding and Fundraising": [
+            "Campaign Performance: Data on crowdfunding campaign goals, pledges, and backer demographics.",
+            "Donor Analytics: Data on donor behavior, donation amounts, and retention rates.",
+            "Funding Trends: Data on trends in crowdfunding and fundraising across different sectors.",
+            "Project Success Factors: Data on factors that contribute to the success or failure of crowdfunding campaigns."
+          ],
+          "Construction and Engineering": [
+            "Project Management: Data on construction project timelines, budget adherence, and milestone completion.",
+            "Safety Incidents: Data on safety incidents, injury rates, and compliance with safety regulations.",
+            "Resource Allocation: Data on the allocation of materials, labor, and equipment across projects.",
+            "Building Information Modeling (BIM): Data on the use of BIM in construction planning and execution."
+          ],
+          "Art and Culture": [
+            "Museum Exhibits: Data on visitor numbers, exhibit popularity, and cultural impact.",
+            "Art Sales and Auctions: Data on art sales, auction results, and artist valuations.",
+            "Cultural Event Attendance: Data on attendance at cultural events, including festivals, concerts, and theater performances.",
+            "Art Collection Management: Data on the acquisition, curation, and preservation of art collections."
+          ],
+          "Health and Wellness": [
+            "Fitness App Data: Data on user activity levels, workout routines, and health goals.",
+            "Wellness Programs: Data on participation in wellness programs, health outcomes, and cost savings.",
+            "Diet and Nutrition: Data on dietary habits, nutrient intake, and health impact.",
+            "Mental Health Services: Data on the use of mental health services, treatment outcomes, and patient satisfaction."
+          ],
+          "Tourism": [
+            "Destination Analysis: Data on popular tourist destinations, visitor demographics, and spending patterns.",
+            "Travel Itineraries: Data on common travel routes, activities, and accommodations chosen by tourists.",
+            "Tourism Impact: Data on the economic, social, and environmental impact of tourism in different regions.",
+            "Tour Operator Performance: Data on tour operator bookings, customer satisfaction, and repeat business."
+          ],
+          "Logistics and Transportation": [
+            "Last-Mile Delivery: Data on delivery times, costs, and customer satisfaction in last-mile logistics.",
+            "Fleet Optimization: Data on fleet management, vehicle routing, and fuel efficiency.",
+            "Warehousing Operations: Data on warehouse inventory levels, picking efficiency, and order fulfillment.",
+            "International Shipping: Data on international trade, shipping routes, and customs compliance."
+          ],
+          "Social Impact and Community Development": [
+            "Impact Investing: Data on investments in social enterprises, return on investment (ROI), and social impact.",
+            "Community Engagement: Data on community participation in development projects, feedback, and outcomes.",
+            "Social Program Effectiveness: Data on the effectiveness of social programs in areas like education, healthcare, and housing.",
+            "Non-Profit Collaboration: Data on collaboration between non-profits, resource sharing, and joint outcomes."
+          ]
+        }
+      }
+      

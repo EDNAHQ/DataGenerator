@@ -531,14 +531,22 @@ th {
 
     
 // Data
-const industries = ["Sales and Marketing", "Finance and Accounting", "Human Resources", "Healthcare", "Education"];
-const scenarios = {
-    "Finance and Accounting": [
-        "Company Financial Statements: Quarterly financial data, including income statements, balance sheets, and cash flow statements.",
-        "Investment Portfolio: Data on a diversified investment portfolio, including stock prices, bond yields, and asset allocation."
-    ],
-    // ... other industries and their scenarios
-};
+let industries = [];
+let scenarios = {};
+    
+// Function to load the JSON data
+function loadScenarioData() {
+    fetch('/static/scenarios_data.json')
+        .then(response => response.json())
+        .then(data => {
+            industries = data.industries;
+            scenarios = data.scenarios;
+            displayIndustries(industries);
+        })
+        .catch(error => console.error('Error loading scenario data:', error));
+}
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', loadScenarioData);
 
 // DOM Elements
 const sidebar = document.getElementById('scenarioBrowser');
